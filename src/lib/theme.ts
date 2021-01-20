@@ -17,16 +17,14 @@ theme.buttons.primary = merge(theme.buttons.primary, {
 });
 
 theme.colors = merge(theme.colors, {
-  text: '#ffffff',
-  background: '#17171d',
-  elevated: '#252429',
-  sheet: '#252429',
-  sunken: '#121217',
-  border: '#252429',
-  placeholder: '#3c4858',
-  secondary: '#8492a6',
-  muted: '#8492a6',
-  accent: '#5bc0de'
+  text: '#EFEDFF',
+  background: '#0E0D18',
+  paper: '#292843',
+  grey: '#56585B',
+  primary: '#E53855',
+  lightGrey: '#7E8181',
+  secondary: '#3F37C9',
+  muted: '#A9A8CC'
 });
 
 // theme.layout.copy.maxWidth = [null, null, 'copyPlus'];
