@@ -1,7 +1,12 @@
 import React from 'react';
+import { Container, Text } from 'theme-ui';
 
 interface Props {}
 
 export const HomeScreen: React.FC = (props: Props) => {
-  return <h1>Home Screen</h1>;
+  return (
+    <Container>
+      <Text variant="title">Welcome to Project-Amsterdam</Text>
+    </Container>
+  );
 };
