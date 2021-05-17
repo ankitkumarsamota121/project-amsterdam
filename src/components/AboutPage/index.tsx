@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import tw from 'twin.macro';
 
 // interface Props {
@@ -8,13 +8,19 @@ import tw from 'twin.macro';
 // }
 
 const Div = tw.div`
-  h-screen w-screen bg-red-200
+  h-screen w-screen bg-red-200 max-w-full
+`;
+
+const Container = tw.div`
+  container mx-auto
 `;
 
 const index = () => {
   return (
-    <Div>
-      <h1>About Me</h1>
+    <Div id="about-page">
+      <Container>
+        <h1>About Me</h1>
+      </Container>
     </Div>
   );
 };
