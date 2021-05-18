@@ -1,15 +1,17 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-
-import BackgroundImage from 'gatsby-background-image';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useViewportScroll, motion, useTransform } from 'framer-motion';
+import BackgroundImage from 'gatsby-background-image';
 
 import NavigationPill from './NavigationPill';
 
 // interface Props {}
 
+/**
+ * * Styling
+ */
 const Background = styled(BackgroundImage)`
   height: 100vh;
   width: 100vw;
@@ -22,7 +24,7 @@ const Background = styled(BackgroundImage)`
 `;
 
 const Container = styled(motion.div)`
-  ${tw`container flex justify-center items-center h-full w-full`}
+  ${tw` h-full w-full flex justify-center items-center`}
 `;
 
 const Heading = tw.h1`
@@ -34,9 +36,12 @@ const SubHeading = tw.h3`
 `;
 
 const Div = styled.div`
-  ${tw`h-1/2 w-full flex flex-col justify-around items-center`}
+  ${tw`h-1/2 w-full max-w-full flex flex-col justify-around items-center`}
 `;
 
+/**
+ * * Component
+ */
 const LandingPage = () => {
   const data = useStaticQuery(
     graphql`
@@ -55,12 +60,11 @@ const LandingPage = () => {
   const imageData = data.desktop.childImageSharp.fluid;
 
   const { scrollY } = useViewportScroll();
-  // const y1 = useTransform(scrollY, [0, 300], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
+  const y = useTransform(scrollY, [0, 300], [0, -100]);
 
   return (
     <Background Tag="section" fluid={imageData}>
-      <Container style={{ y: y2, x: 50 }}>
+      <Container style={{ y }}>
         <Div>
           <div>
             <Heading>Hey, I'm Ankit</Heading>

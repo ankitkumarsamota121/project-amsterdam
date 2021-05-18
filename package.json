@@ -46,6 +46,7 @@
   "devDependencies": {
     "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^5.1.0",
+    "@types/tailwindcss": "^2.0.3",
     "eslint": "^7.1.0",
     "eslint-config-blvd": "^1.0.2",
     "eslint-config-prettier": "^6.11.0",

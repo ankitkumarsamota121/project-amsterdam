@@ -1,14 +1,20 @@
 import React from 'react';
 
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import tw from 'twin.macro';
 
 // interface Props {
 
 // }
 
-const Div = tw.div`
-  h-screen w-screen bg-red-200 max-w-full
+const Div = styled.div`
+  background-color: #16101d;
+
+  &::after {
+    ${tw`filter brightness-50`}
+  }
+
+  ${tw`h-screen w-screen max-w-full`}
 `;
 
 const Container = tw.div`
@@ -19,7 +25,7 @@ const index = () => {
   return (
     <Div id="about-page">
       <Container>
-        <h1>About Me</h1>
+        <h1 className="text-white">About Me</h1>
       </Container>
     </Div>
   );
