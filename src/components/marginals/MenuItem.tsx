@@ -4,6 +4,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Link } from 'react-scroll';
 
+interface Props {
+  i: string;
+  toggle: () => void;
+}
+
 /**
  * * MenuItem Styling
  */
@@ -41,10 +46,10 @@ const variants = {
 /**
  * * MenuItem Component
  */
-const MenuItem = ({ i }: { i: string }) => {
+const MenuItem = ({ i, toggle }: Props) => {
   return (
     <MotionLi variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-      <Link to={`${i.toLowerCase()}-section`} spy smooth duration={500}>
+      <Link to={`${i.toLowerCase()}-section`} spy smooth duration={500} onClick={toggle}>
         <Title>{i}</Title>
       </Link>
     </MotionLi>

@@ -5,12 +5,18 @@ import tw from 'twin.macro';
 
 import MenuItem from './MenuItem';
 
+interface Props {
+  isOpen: boolean;
+  toggle: () => void;
+}
+
 /**
  * * Navigation Styling
  */
 const Container = styled.div`
   z-index: 900;
-  ${tw`h-screen w-screen fixed top-0 left-0 container mx-auto flex items-center`};
+  display: ${(props: { isOpen: boolean }) => (props.isOpen ? 'flex' : 'none')};
+  ${tw`h-screen w-screen fixed top-0 left-0 container mx-auto items-center`};
 `;
 
 const MotionUl = styled(motion.ul)`
@@ -35,11 +41,11 @@ const itemIds = ['About', 'Skills', 'Projects', 'Contact'];
 /**
  * * Navigation Component
  */
-const Navigation = () => (
-  <Container>
+const Navigation = ({ isOpen, toggle }: Props) => (
+  <Container isOpen={isOpen}>
     <MotionUl variants={variants}>
       {itemIds.map((i) => (
-        <MenuItem i={i} key={i} />
+        <MenuItem i={i} key={i} toggle={toggle} />
       ))}
     </MotionUl>
   </Container>

@@ -8,7 +8,7 @@ interface Props {
 }
 
 /**
- * * Styling
+ * * MenuToggle Styling
  */
 const Path = styled(motion.path)`
   fill: transparent;
@@ -27,7 +27,7 @@ const Button = styled.button`
 `;
 
 /**
- * * Component
+ * * MenuToggle Component
  */
 const MenuToggle = ({ toggle }: Props) => {
   return (

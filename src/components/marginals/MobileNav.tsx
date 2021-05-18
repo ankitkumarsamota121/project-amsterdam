@@ -65,7 +65,7 @@ const Navbar = () => {
       <Div initial={false} animate={isOpen ? 'open' : 'closed'} custom={height}>
         <Sidebar variants={sidebar} />
         <MenuToggle toggle={() => toggleOpen()} />
-        <Navigation />
+        <Navigation isOpen={isOpen} toggle={() => toggleOpen()} />
       </Div>
     </Nav>
   );
