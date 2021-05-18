@@ -5,3 +5,8 @@ declare module 'react' {
     css?: CSSProp;
   }
 }
+
+declare module 'tailwindConfig' {
+  let a: any;
+  export = a;
+}

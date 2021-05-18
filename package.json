@@ -28,6 +28,7 @@
     "gatsby": "^2.20.2",
     "gatsby-background-image": "^1.5.3",
     "gatsby-plugin-force-trailing-slashes": "^1.0.4",
+    "gatsby-plugin-postcss": "^4.5.0",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",

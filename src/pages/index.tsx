@@ -1,14 +1,16 @@
 import React from 'react';
 import Theme from '../components/theme';
-import LandingPage from '../components/LandingPage';
-import AboutPage from '../components/AboutPage';
+import Landing from '../components/Landing';
+import About from '../components/About';
+import Navbar from '../components/marginals/Navbar';
 
 import '../styles/global.css';
 
 const Index = () => (
   <Theme>
-    <LandingPage />
-    <AboutPage />
+    <Navbar />
+    <Landing />
+    <About />
   </Theme>
 );
 

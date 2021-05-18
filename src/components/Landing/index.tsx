@@ -28,7 +28,7 @@ const Container = styled(motion.div)`
 `;
 
 const Heading = tw.h1`
-  text-4xl md:text-6xl font-extrabold text-center text-blue-400 filter drop-shadow
+  text-4xl md:text-6xl font-extrabold text-center text-blue-400 
 `;
 
 const SubHeading = tw.h3`
@@ -64,7 +64,7 @@ const LandingPage = () => {
 
   return (
     <Background Tag="section" fluid={imageData}>
-      <Container style={{ y }}>
+      <Container id="landing-page" style={{ y }}>
         <Div>
           <div>
             <Heading>Hey, I'm Ankit</Heading>
