@@ -7,10 +7,8 @@ import BackgroundImage from 'gatsby-background-image';
 
 import NavigationPill from './NavigationPill';
 
-// interface Props {}
-
 /**
- * * Styling
+ * * Landing Styling
  */
 const Background = styled(BackgroundImage)`
   height: 100vh;
@@ -40,9 +38,9 @@ const Div = styled.div`
 `;
 
 /**
- * * Component
+ * * Landing Component
  */
-const LandingPage = () => {
+const Landing = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -82,4 +80,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Landing;

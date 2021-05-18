@@ -7,7 +7,7 @@ import tw from 'twin.macro';
 
 // }
 
-const Div = styled.div`
+const Div = styled.section`
   background-color: #16101d;
 
   &::after {
@@ -23,7 +23,7 @@ const Container = tw.div`
 
 const index = () => {
   return (
-    <Div id="about-page">
+    <Div id="about-section">
       <Container>
         <h1 className="text-white">About Me</h1>
       </Container>

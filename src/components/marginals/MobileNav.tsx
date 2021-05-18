@@ -1,21 +1,18 @@
-import React, { MutableRefObject, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { motion, useTransform, useViewportScroll, useCycle } from 'framer-motion';
-import scrollTo from 'gatsby-plugin-smoothscroll';
+import { motion, useCycle } from 'framer-motion';
 
 import Logo from './Logo';
 import MenuToggle from './MenuToggle';
-import { useDimensions } from '../../hooks/useDimensions';
+import Navigation from './Navigation';
+import useDimensions from '../../hooks/useDimensions';
 
-// interface Props {
-
-// }
 /**
  * * Mobile Navbar Styling
  */
 const Nav = styled(motion.nav)`
-  ${tw`container m-5 flex justify-around items-center`}
+  ${tw`container m-5 flex justify-between items-center`}
 `;
 
 const Div = styled(motion.div)`
@@ -30,15 +27,7 @@ const Sidebar = styled(motion.div)`
   width: 200vw;
   height: 200vh;
   z-index: 100;
-  background: #000;
-`;
-
-const Ul = tw.ul`
-flex flex-row
-`;
-
-const Li = tw.li`
-pr-5
+  ${tw`bg-background`}
 `;
 
 /**
@@ -68,16 +57,15 @@ const sidebar = {
  */
 const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef: MutableRefObject<HTMLElement | null> = useRef(null);
-  const { height } = useDimensions(containerRef);
+  const { height } = useDimensions();
 
   return (
     <Nav>
       <Logo />
       <Div initial={false} animate={isOpen ? 'open' : 'closed'} custom={height}>
         <Sidebar variants={sidebar} />
-        {/* <Navigation /> */}
         <MenuToggle toggle={() => toggleOpen()} />
+        <Navigation />
       </Div>
     </Nav>
   );

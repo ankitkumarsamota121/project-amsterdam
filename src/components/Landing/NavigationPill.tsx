@@ -4,11 +4,17 @@ import tw from 'twin.macro';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { motion } from 'framer-motion';
 
+/**
+ * * Props Interface
+ */
 interface Props {
   icon: string;
   title: string;
 }
 
+/**
+ * * NavigationPills Styling
+ */
 const Div = styled(motion.div)`
   &:hover {
     cursor: pointer;
@@ -25,6 +31,9 @@ const Title = tw.div`
   tracking-wider font-light
 `;
 
+/**
+ * * NavigationPills Icons
+ */
 const UserIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +105,9 @@ const PhoneIcon = () => (
   </svg>
 );
 
+/**
+ * * NavigationPills Component
+ */
 const NavigationPills = ({ icon, title }: Props) => {
   return (
     <Div

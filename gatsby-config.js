@@ -1,9 +1,10 @@
 const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby + Typescript + Tailwind CSS + Styled-Components Starter`,
-    description: `A bare-bones Typescript + Tailwind CSS + Styled-Components + starter to kickoff your project.`,
-    author: `@reevmich`
+    title: `Ankit Samota`,
+    description: `Portfolio of Ankit Samota`,
+    author: `@incognitus`
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -16,7 +17,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-postcss`
+    `gatsby-transformer-sharp`
   ]
 };
