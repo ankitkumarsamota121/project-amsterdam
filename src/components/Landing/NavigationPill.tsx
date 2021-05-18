@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import scrollTo from 'gatsby-plugin-smoothscroll';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 /**
  * * Props Interface
@@ -110,19 +110,17 @@ const PhoneIcon = () => (
  */
 const NavigationPills = ({ icon, title }: Props) => {
   return (
-    <Div
-      onClick={() => scrollTo(`#${title.toLowerCase()}-page`)}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    >
-      <Icon>
-        {icon === 'about' && <UserIcon />}
-        {icon === 'skills' && <BadgeIcon />}
-        {icon === 'projects' && <ClipboardIcon />}
-        {icon === 'contact' && <PhoneIcon />}
-      </Icon>
-      <Title>{title}</Title>
-    </Div>
+    <Link to={`${title.toLowerCase()}-section`} spy smooth duration={500}>
+      <Div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <Icon>
+          {icon === 'about' && <UserIcon />}
+          {icon === 'skills' && <BadgeIcon />}
+          {icon === 'projects' && <ClipboardIcon />}
+          {icon === 'contact' && <PhoneIcon />}
+        </Icon>
+        <Title>{title}</Title>
+      </Div>
+    </Link>
   );
 };
 
