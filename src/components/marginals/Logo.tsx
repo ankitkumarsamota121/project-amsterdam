@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { animateScroll as scroll } from 'react-scroll';
+import {animateScroll as scroll} from 'react-scroll';
 
 /**
  * * Logo Styling
  */
 const LogoDiv = styled.div`
-  font-family: 'raleway';
+  font-family: 'poppins';
   cursor: pointer;
-  ${tw`text-2xl font-semibold text-blue-400`}
+  ${tw`text-4xl font-bold text-accent`}
 `;
 
 /**
  * * Logo Component
  */
 const Logo = () => {
-  return <LogoDiv onClick={() => scroll.scrollToTop()}>Ankit Samota</LogoDiv>;
+  return <LogoDiv onClick={() => scroll.scrollToTop()}>ankit samota</LogoDiv>;
 };
 
 export default Logo;

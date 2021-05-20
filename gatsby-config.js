@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Ankit Samota`,
     description: `Portfolio of Ankit Samota`,
-    author: `@incognitus`
+    author: `@incognitus`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -13,17 +13,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`)
-      }
+        path: path.join(__dirname, `src`, `images`),
+      },
     },
     {
-      resolve: 'gatsby-background-image-es5',
+      resolve: 'gatsby-plugin-react-svg',
       options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:'
-      }
+        rule: {
+          include: /images/,
+        },
+      },
     },
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`
-  ]
+    `gatsby-transformer-sharp`,
+  ],
 };
