@@ -703,10 +703,12 @@ module.exports = {
       1: '1',
       2: '2',
     },
-    textColor: {
+    textColor: theme => ({
+      ...theme('colors'),
       primary: '#EFEDFF',
       secondary: '#BEBDD4',
-    },
+      accent: '#6A4FFE',
+    }),
     textOpacity: theme => theme('opacity'),
     transformOrigin: {
       center: 'center',

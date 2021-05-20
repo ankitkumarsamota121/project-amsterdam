@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { motion, useCycle } from 'framer-motion';
+import {motion, useCycle} from 'framer-motion';
 
 import Logo from './Logo';
 import MenuToggle from './MenuToggle';
-import Navigation from './Navigation';
+import Navigation from './MobileNavigation';
 import useDimensions from '../../hooks/useDimensions';
 
 /**
  * * Mobile Navbar Styling
  */
 const Nav = styled(motion.nav)`
-  ${tw`container m-5 flex justify-between items-center`}
+  ${tw`container flex md:hidden justify-between items-center`}
 `;
 
 const Div = styled(motion.div)`
@@ -39,17 +39,17 @@ const sidebar = {
     transition: {
       type: 'spring',
       stiffness: 20,
-      restDelta: 2
-    }
+      restDelta: 2,
+    },
   }),
   closed: {
     clipPath: 'circle(0px)',
     transition: {
       type: 'spring',
       stiffness: 400,
-      damping: 40
-    }
-  }
+      damping: 40,
+    },
+  },
 };
 
 /**
@@ -57,7 +57,7 @@ const sidebar = {
  */
 const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const { height } = useDimensions();
+  const {height} = useDimensions();
 
   return (
     <Nav>
