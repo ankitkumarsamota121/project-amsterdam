@@ -17,7 +17,7 @@ const Btn = styled(motion.button)`
   &:focus {
     outline: none;
   }
-  ${tw`bg-primary text-primary text-xl px-10 py-4 rounded-lg flex justify-center items-center`}
+  ${tw`bg-primary text-primary text-xl px-10 py-4 rounded-lg justify-center items-center`}
 `;
 
 /**

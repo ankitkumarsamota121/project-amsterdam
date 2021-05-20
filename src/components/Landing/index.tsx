@@ -33,7 +33,7 @@ const Image = styled(Img)`
 
 const SubHeading = styled.h3`
   font-family: 'Space Grotesk';
-  ${tw`mt-8 md:mt-12 md:text-2xl font-normal text-left text-secondary`}
+  ${tw`max-w-2xl mt-8 md:mt-12 md:text-2xl font-normal text-left text-secondary`}
 `;
 
 /**
@@ -46,13 +46,13 @@ const Landing = () => {
         <Grid>
           <GridDivText className="">
             <Heading>
-              Hey! I’m Ankit, <br />a web developer
+              Hey! I’m Ankit, <br />a developer.
             </Heading>
             <SubHeading>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
-              Vel purus cras curabitur eget facilisis nisl.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel purus
+              cras curabitur eget facilisis nisl.
             </SubHeading>
-            <Button classes="mt-8 md:mt-12">Contact Me</Button>
+            <Button classes="mt-8 md:mt-12 hidden md:flex">Contact Me</Button>
           </GridDivText>
           <GridDivImage>
             <Image />
