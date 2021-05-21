@@ -4,8 +4,12 @@ import tw from 'twin.macro';
 
 interface Props {
   children: ReactNode;
-  classes: string;
+  classes?: string;
 }
+
+const defaultHeadingProps = {
+  classes: '',
+};
 
 /**
  * * Heading Styling
@@ -21,5 +25,6 @@ const H1 = styled.h1`
 const Heading = ({children, classes}: Props) => {
   return <H1 className={classes}>{children}</H1>;
 };
+Heading.defaultProps = defaultHeadingProps;
 
 export default Heading;

@@ -5,8 +5,12 @@ import {motion} from 'framer-motion';
 
 interface Props {
   children: ReactNode;
-  classes: string;
+  classes?: string;
 }
+
+const defaultButtonProps = {
+  classes: '',
+};
 
 /**
  * * Button Styling
@@ -30,5 +34,5 @@ const Button = ({children, classes}: Props) => {
     </Btn>
   );
 };
-
+Button.defaultProps = defaultButtonProps;
 export default Button;
