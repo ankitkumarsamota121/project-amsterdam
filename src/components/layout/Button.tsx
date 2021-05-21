@@ -5,8 +5,12 @@ import {motion} from 'framer-motion';
 
 interface Props {
   children: ReactNode;
-  classes: string;
+  classes?: string;
 }
+
+const defaultButtonProps = {
+  classes: '',
+};
 
 /**
  * * Button Styling
@@ -17,7 +21,7 @@ const Btn = styled(motion.button)`
   &:focus {
     outline: none;
   }
-  ${tw`bg-primary text-primary text-xl px-10 py-4 rounded-lg justify-center items-center`}
+  ${tw`bg-primary text-primary md:text-xl px-8 py-3 md:px-10 md:py-4 rounded-lg justify-center items-center`}
 `;
 
 /**
@@ -30,5 +34,5 @@ const Button = ({children, classes}: Props) => {
     </Btn>
   );
 };
-
+Button.defaultProps = defaultButtonProps;
 export default Button;

@@ -9,7 +9,7 @@ import {animateScroll as scroll} from 'react-scroll';
 const LogoDiv = styled.div`
   font-family: 'poppins';
   cursor: pointer;
-  ${tw`text-4xl font-bold text-accent`}
+  ${tw`text-2xl md:text-3xl lg:text-4xl font-bold text-accent`}
 `;
 
 /**

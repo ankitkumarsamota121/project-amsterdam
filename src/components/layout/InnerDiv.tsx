@@ -7,23 +7,23 @@ interface Props {
   classes?: string;
 }
 
-const defaultContainerProps = {
+const defaultInnerDivProps = {
   classes: '',
 };
 
 /**
- * * Container Styling
+ * * InnerDiv Styling
  */
 const Div = styled.div`
-  ${tw`container mx-auto px-5 lg:p-0 lg:w-3/4`};
+  ${tw`min-h-screen flex flex-col justify-center py-20`};
 `;
 
 /**
- * * Container Components
+ * * InnerDiv Components
  */
-const Container = ({children, classes}: Props) => {
+const InnerDiv = ({children, classes}: Props) => {
   return <Div className={classes}>{children}</Div>;
 };
-Container.defaultProps = defaultContainerProps;
+InnerDiv.defaultProps = defaultInnerDivProps;
 
-export default Container;
+export default InnerDiv;
