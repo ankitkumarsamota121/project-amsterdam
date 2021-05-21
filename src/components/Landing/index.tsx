@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import {motion, useCycle} from 'framer-motion';
 
 // @ts-expect-error : Just importing an SVG
 import Img from '../../images/sketch.svg';
@@ -12,7 +13,7 @@ import Button from '../layout/Button';
  * * Landing Styling
  */
 const Div = styled.div`
-  ${tw`mt-10 sm:mt-0 min-h-screen w-screen bg-background flex justify-center items-center`}
+  ${tw`sm:mt-0 min-h-screen w-screen bg-background flex justify-center items-center`}
 `;
 
 const Grid = styled.div`
@@ -23,12 +24,14 @@ const GridDivText = styled.div`
   ${tw`w-full w-full flex flex-col justify-center items-start row-start-2 md:row-start-1 md:col-start-1 md:col-span-2 `}
 `;
 
-const GridDivImage = styled.div`
+const GridDivImage = styled(motion.div)`
   ${tw`w-full w-full flex flex-col justify-center items-start row-start-1 md:col-start-3`}
 `;
 
 const Image = styled(Img)`
-  ${tw`h-60 md:h-96 max-h-96 max-w-full`}
+  filter: drop-shadow(10px 10px 200px #6a4ffe)
+    drop-shadow(-10px -10px 50px #6a4ffe);
+  ${tw`h-48 md:h-60 xl:h-96 max-h-96 max-w-full`}
 `;
 
 const SubHeading = styled.h3`
@@ -44,7 +47,7 @@ const Landing = () => {
     <Div>
       <Container>
         <Grid>
-          <GridDivText className="">
+          <GridDivText>
             <Heading>
               Hey! I’m Ankit, <br />a developer.
             </Heading>
@@ -52,9 +55,15 @@ const Landing = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel purus
               cras curabitur eget facilisis nisl.
             </SubHeading>
-            <Button classes="mt-8 md:mt-12 hidden md:flex">Contact Me</Button>
+            <Button classes="mt-8 md:mt-12">Contact Me</Button>
           </GridDivText>
-          <GridDivImage>
+          <GridDivImage
+            animate={{
+              y: [0, -20],
+              opacity: 1,
+              transition: {yoyo: Infinity, ease: 'easeOut'},
+            }}
+          >
             <Image />
           </GridDivImage>
         </Grid>
