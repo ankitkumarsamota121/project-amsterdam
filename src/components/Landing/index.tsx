@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import {motion, useCycle} from 'framer-motion';
+import {motion} from 'framer-motion';
 
 // @ts-expect-error : Just importing an SVG
 import Img from '../../images/sketch.svg';
@@ -13,7 +13,7 @@ import Button from '../layout/Button';
  * * Landing Styling
  */
 const Div = styled.div`
-  ${tw`sm:mt-0 min-h-screen w-screen bg-background flex justify-center items-center`}
+  ${tw`mt-5 sm:mt-0 min-h-screen w-screen bg-background flex justify-center items-center`}
 `;
 
 const Grid = styled.div`
@@ -48,7 +48,7 @@ const Landing = () => {
       <Container>
         <Grid>
           <GridDivText>
-            <Heading>
+            <Heading classes="text-left">
               Hey! I’m Ankit, <br />a developer.
             </Heading>
             <SubHeading>
@@ -61,7 +61,11 @@ const Landing = () => {
             animate={{
               y: [0, -20],
               opacity: 1,
-              transition: {yoyo: Infinity, ease: 'easeOut'},
+              transition: {
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'easeOut',
+              },
             }}
           >
             <Image />
