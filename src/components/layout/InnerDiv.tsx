@@ -15,7 +15,7 @@ const defaultInnerDivProps = {
  * * InnerDiv Styling
  */
 const Div = styled.div`
-  ${tw`min-h-screen flex flex-col justify-center py-20`};
+  ${tw`min-h-screen py-20 flex flex-col justify-center items-center`};
 `;
 
 /**

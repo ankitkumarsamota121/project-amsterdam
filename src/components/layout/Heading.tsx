@@ -1,4 +1,5 @@
 import React, {ReactNode} from 'react';
+import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
@@ -14,7 +15,7 @@ const defaultHeadingProps = {
 /**
  * * Heading Styling
  */
-const H1 = styled.h1`
+const H1 = styled(motion.h1)`
   font-family: 'Space Grotesk';
   ${tw`text-5xl md:text-6xl lg:text-7xl font-bold text-primary`};
 `;

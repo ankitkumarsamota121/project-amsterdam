@@ -8,6 +8,7 @@ import Container from '../layout/Container';
 import Heading from '../layout/Heading';
 import Button from '../layout/Button';
 import InnerDiv from '../layout/InnerDiv';
+import MotionDiv from '../layout/MotionDiv';
 
 /**
  * * About Section Styling
@@ -75,37 +76,39 @@ const About = () => {
       }
     `,
   );
-  // console.log(data);
+
   const imageData = data.file.childImageSharp.fluid;
   return (
     <Div id="about-section">
       <Container>
         <InnerDiv>
-          <Heading classes="text-center justify-self-start">About Me</Heading>
-          <Grid>
-            <GridImage>
-              <Image>
-                <BackDiv />
-                <ShadowDiv>
-                  <Img
-                    fluid={imageData}
-                    className="w-48 md:w-52 xl:w-72 max-w-xs rounded-3xl"
-                  />
-                </ShadowDiv>
-              </Image>
-            </GridImage>
-            <GridText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel purus
-              cras curabitur eget facilisis nisl. Neque a porttitor. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit.
-              <Ul>
-                <Li>Programmer</Li>
-                <Li>Developer</Li>
-                <Li>Designer</Li>
-              </Ul>
-              <Button classes="mt-8 md:mt-12">My Projects</Button>
-            </GridText>
-          </Grid>
+          <MotionDiv>
+            <Heading classes="text-center justify-self-start">About Me</Heading>
+            <Grid>
+              <GridImage>
+                <Image>
+                  <BackDiv />
+                  <ShadowDiv>
+                    <Img
+                      fluid={imageData}
+                      className="w-48 md:w-52 xl:w-72 max-w-xs rounded-3xl"
+                    />
+                  </ShadowDiv>
+                </Image>
+              </GridImage>
+              <GridText>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel
+                purus cras curabitur eget facilisis nisl. Neque a porttitor.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <Ul>
+                  <Li key="1">Programmer</Li>
+                  <Li key="2">Developer</Li>
+                  <Li key="3">Designer</Li>
+                </Ul>
+                <Button classes="mt-8 md:mt-12">My Projects</Button>
+              </GridText>
+            </Grid>
+          </MotionDiv>
         </InnerDiv>
       </Container>
     </Div>
