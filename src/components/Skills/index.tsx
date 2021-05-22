@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 
 import Container from '../layout/Container';
 import Heading from '../layout/Heading';
-
+import InnerDiv from '../layout/InnerDiv';
 /**
  * * Skills Section Styling
  */
@@ -19,7 +19,9 @@ const Skills = () => {
   return (
     <Div id="skills-section">
       <Container>
-        <Heading classes="text-center">My Expertise</Heading>
+        <InnerDiv>
+          <Heading classes="text-center">My Expertise</Heading>
+        </InnerDiv>
       </Container>
     </Div>
   );
