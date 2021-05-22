@@ -28,7 +28,7 @@ const divVariants = {
       duration: 1,
     },
   },
-  visible: {
+  final: {
     opacity: 1,
     scale: 1,
     y: 0,

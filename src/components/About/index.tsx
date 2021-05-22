@@ -101,9 +101,9 @@ const About = () => {
                 purus cras curabitur eget facilisis nisl. Neque a porttitor.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 <Ul>
-                  <Li>Programmer</Li>
-                  <Li>Developer</Li>
-                  <Li>Designer</Li>
+                  <Li key="1">Programmer</Li>
+                  <Li key="2">Developer</Li>
+                  <Li key="3">Designer</Li>
                 </Ul>
                 <Button classes="mt-8 md:mt-12">My Projects</Button>
               </GridText>

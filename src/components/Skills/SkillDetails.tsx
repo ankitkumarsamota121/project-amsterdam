@@ -18,11 +18,12 @@ interface Props {
 
 const Div = styled(motion.div)`
   box-shadow: 0px 4px 20px rgba(196, 196, 196, 0.25);
-  ${tw`h-96 w-full bg-background flex flex-col items-center rounded-3xl`}
+  min-height: 24rem;
+  ${tw`max-w-sm bg-background flex flex-col items-center rounded-3xl`}
 `;
 
 const Box = styled.div`
-  ${tw`h-24 w-24 p-4 relative bg-primary transform -translate-y-8 rounded-2xl -mb-4`}
+  ${tw`h-20 w-20 sm:h-24 sm:w-24 p-4 relative bg-primary transform -translate-y-8 rounded-2xl -mb-4`}
 `;
 
 const SkillGrid = styled.div`
