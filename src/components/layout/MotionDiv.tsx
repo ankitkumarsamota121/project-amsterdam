@@ -48,7 +48,7 @@ const MotionDiv = ({children}: Props) => {
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start('final');
     } else {
       controls.start('initial');
     }
