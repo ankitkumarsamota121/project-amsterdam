@@ -25,7 +25,7 @@ const divVariants = {
     y: 40,
     transition: {
       type: 'spring',
-      duration: 2,
+      duration: 1,
     },
   },
   visible: {
@@ -34,7 +34,7 @@ const divVariants = {
     y: 0,
     transition: {
       type: 'spring',
-      duration: 2,
+      duration: 1,
     },
   },
 };
