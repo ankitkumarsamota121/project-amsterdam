@@ -1,8 +1,8 @@
 import React from 'react';
 import {graphql, useStaticQuery} from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import {GatsbyImage} from 'gatsby-plugin-image';
 
 import Container from '../layout/Container';
 import Heading from '../layout/Heading';
@@ -68,16 +68,14 @@ const About = () => {
       query Ankit {
         file(relativePath: {eq: "ankit.png"}) {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
         }
       }
     `,
   );
 
-  const imageData = data.file.childImageSharp.fluid;
+  const imageData = data.file.childImageSharp.gatsbyImageData;
   return (
     <Div id="about-section">
       <Container>
@@ -89,8 +87,9 @@ const About = () => {
                 <Image>
                   <BackDiv />
                   <ShadowDiv>
-                    <Img
-                      fluid={imageData}
+                    <GatsbyImage
+                      image={imageData}
+                      alt="Me"
                       className="w-48 md:w-52 xl:w-72 max-w-xs rounded-3xl"
                     />
                   </ShadowDiv>
