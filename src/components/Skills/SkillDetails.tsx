@@ -78,7 +78,7 @@ const SkillDetails = ({title, skills, icon}: Props) => {
 
       <SkillGrid>
         {skills.map(skill => (
-          <Pill>{skill}</Pill>
+          <Pill key={skill}>{skill}</Pill>
         ))}
       </SkillGrid>
     </Div>

@@ -96,7 +96,12 @@ const Skills = () => {
               {nodes.map(node => {
                 const {title, skills, icon} = node.frontmatter;
                 return (
-                  <SkillDetails title={title} skills={skills} icon={icon} />
+                  <SkillDetails
+                    title={title}
+                    skills={skills}
+                    icon={icon}
+                    key={title}
+                  />
                 );
               })}
             </Grid>

@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import {graphql, useStaticQuery} from 'gatsby';
 import {motion, useAnimation} from 'framer-motion';
 import {useInView} from 'react-intersection-observer';
+import {IGatsbyImageData} from 'gatsby-plugin-image';
 
 import Container from '../layout/Container';
 import Heading from '../layout/Heading';
@@ -19,7 +20,11 @@ interface QueryData {
         description: string;
         github: string;
         link: string;
-        thumb: any;
+        thumb: {
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData;
+          };
+        };
       };
     }[];
   };
@@ -110,6 +115,7 @@ const Projects = () => {
                     thumb={
                       node.frontmatter.thumb.childImageSharp.gatsbyImageData
                     }
+                    key={title}
                   />
                 );
               })}

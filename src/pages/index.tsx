@@ -1,12 +1,14 @@
 import React from 'react';
 import Theme from '../components/theme';
+import Navbar from '../components/marginals/Navbar';
 import Landing from '../components/Landing';
 import About from '../components/About';
 import Skills from '../components/Skills';
-import Navbar from '../components/marginals/Navbar';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
+import Footer from '../components/marginals/Footer';
 
 import '../styles/global.css';
-import Projects from '../components/Projects';
 
 const Index = () => (
   <Theme>
@@ -15,6 +17,8 @@ const Index = () => (
     <About />
     <Skills />
     <Projects />
+    <Contact />
+    <Footer />
   </Theme>
 );
 
