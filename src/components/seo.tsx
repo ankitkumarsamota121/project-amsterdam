@@ -18,6 +18,8 @@ function SEO({description, lang, title}: Props) {
             description
             keywords
             siteUrl
+            image
+            twitterUsername
           }
         }
       }
@@ -25,6 +27,9 @@ function SEO({description, lang, title}: Props) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaImage = site.siteMetadata.image;
+  const metaSiteUrl = site.siteMetadata.siteUrl;
+  const metaTwitterUsername = site.siteMetadata.twitterUsername;
   // const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
@@ -44,6 +49,10 @@ function SEO({description, lang, title}: Props) {
           content: site.siteMetadata.keywords.join(','),
         },
         {
+          name: 'image',
+          content: metaImage,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -56,8 +65,28 @@ function SEO({description, lang, title}: Props) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `${metaSiteUrl}${metaImage}`,
+        },
+        {
+          property: `og:url`,
+          content: metaSiteUrl,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:creator`,
+          content: metaTwitterUsername,
+        },
+        {
+          name: `twitter:image`,
+          content: `${metaSiteUrl}${metaImage}`,
         },
         {
           name: `twitter:description`,

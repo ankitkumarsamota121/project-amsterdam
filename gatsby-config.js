@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Ankit Samota',
+    title: 'Personal Website',
     description:
       'Ankit Samota is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
     siteUrl: 'https://asamota.com', // No trailing slash allowed!
@@ -18,7 +18,7 @@ module.exports = {
       'developer portfolio',
     ],
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    // twitterUsername: '',
+    twitterUsername: '@AnkitSamota3',
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -26,7 +26,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
@@ -68,8 +67,11 @@ module.exports = {
         start_url: `/`,
         background_color: `#6A4FFE`,
         theme_color: `#EFEDFF`,
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: `src/images/icon.png`,
+        icon_options: {
+          purpose: `maskable`,
+        },
       },
     },
     `gatsby-plugin-offline`,
