@@ -18,12 +18,12 @@ const Div = styled.section`
 `;
 
 const Grid = styled.div`
-  ${tw`grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 md:mt-20`}
+  ${tw`grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 md:mt-32`}
 `;
 
 const GridImage = styled.div`
   position: relative;
-  ${tw`flex justify-center lg:justify-start items-center`}
+  ${tw`flex justify-center items-center`}
 `;
 
 const Image = styled.div`

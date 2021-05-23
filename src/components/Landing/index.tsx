@@ -29,8 +29,15 @@ const GridDivImage = styled(motion.div)`
 `;
 
 const Image = styled(Img)`
-  filter: drop-shadow(10px 10px 200px #6a4ffe)
-    drop-shadow(-10px -10px 50px #6a4ffe);
+  filter: drop-shadow(0px 0px 250px #6a4ffe)
+    drop-shadow(-10px -10px 100px #6a4ffe);
+  /* --webkit-filter: drop-shadow(10px 10px 400px #6a4ffe)
+    drop-shadow(-10px -10px 100px #6a4ffe);
+  --moz-filter: drop-shadow(10px 10px 400px #6a4ffe)
+    drop-shadow(-10px -10px 100px #6a4ffe);
+  box-shadow: none; */
+  /* --webkit-appearance: none; */
+  background: transparent;
   ${tw`h-48 md:h-60 xl:h-96 max-h-96 max-w-full`}
 `;
 
@@ -60,11 +67,12 @@ const Landing = () => {
           <GridDivImage
             animate={{
               y: [0, -20],
-              opacity: 1,
+              opacity: [1, 0.8],
               transition: {
                 repeat: Infinity,
                 repeatType: 'reverse',
                 ease: 'easeOut',
+                type: 'tween',
               },
             }}
           >

@@ -42,21 +42,14 @@ const Grid = styled(motion.div)`
 `;
 
 const gridVariants = {
-  initial: {
-    y: 200,
-    opacity: 0,
-  },
   final: {
-    y: 0,
-    opacity: 1,
     transition: {
-      delay: 0.3,
-      staggerChildren: 0.2,
-      type: 'spring',
+      delay: 0.25,
+      staggerChildren: 0.3,
+      type: 'tween',
     },
   },
 };
-
 /**
  * * Projects Section Component
  */
@@ -67,8 +60,6 @@ const Projects = () => {
   useEffect(() => {
     if (inView) {
       controls.start('final');
-    } else {
-      controls.start('initial');
     }
   }, [inView]);
 

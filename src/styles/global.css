@@ -9,10 +9,14 @@ html,
 body {
   min-height: 100%;
   font-family: 'Space Grotesk';
+  background-color: #0f0824;
+  overflow-x: hidden;
+  -webkit-appearance: none;
 }
 
 * {
   -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 ::-webkit-scrollbar {
   display: none;
