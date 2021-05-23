@@ -27,7 +27,7 @@ const Box = styled.div`
 `;
 
 const SkillGrid = styled.div`
-  ${tw`flex flex-wrap justify-start px-8 gap-2 mt-8`}
+  ${tw`flex flex-wrap pl-6 pr-8 mt-8`}
 `;
 
 const Title = styled.h2`
@@ -37,7 +37,7 @@ const Title = styled.h2`
 
 const Pill = styled.span`
   font-family: 'Space Grotesk';
-  ${tw`px-3 py-1 text-primary bg-primary rounded-full`}
+  ${tw`px-3 py-1 ml-2 mt-2 text-primary bg-primary rounded-full`}
 `;
 
 const WebIcon = styled(Web)`
@@ -47,6 +47,8 @@ const WebIcon = styled(Web)`
 const CodingIcon = styled(Coding)`
   ${tw`h-full w-full`}
 `;
+
+// i^2 + (2k - 1) * i - 2g = 0
 
 const NeuralIcon = styled(Neural)`
   ${tw`h-full w-full`}

@@ -51,7 +51,7 @@ const Text = styled.div`
 `;
 
 const LinkDiv = styled.div`
-  ${tw`flex gap-4`}
+  ${tw`flex space-x-4`}
 `;
 
 const Link = styled(motion.a)`
