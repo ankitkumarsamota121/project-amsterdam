@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Ankit Samota',
+    title: 'Personal Website',
     description:
       'Ankit Samota is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
     siteUrl: 'https://asamota.com', // No trailing slash allowed!
@@ -67,7 +67,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#6A4FFE`,
         theme_color: `#EFEDFF`,
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: `src/images/icon.png`,
         icon_options: {
           purpose: `maskable`,

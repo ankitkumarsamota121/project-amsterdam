@@ -32,15 +32,6 @@ function SEO({description, lang, title}: Props) {
   const metaTwitterUsername = site.siteMetadata.twitterUsername;
   // const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
-  /**
-<!-- Open Graph data -->
-<meta property="og:title" content="Title Here" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.example.com/" />
-<meta property="og:image" content="http://example.com/image.jpg" />
-<meta property="og:description" content="Description Here" />
-   */
-
   return (
     <Helmet
       htmlAttributes={{
@@ -58,6 +49,10 @@ function SEO({description, lang, title}: Props) {
           content: site.siteMetadata.keywords.join(','),
         },
         {
+          name: 'image',
+          content: metaImage,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -71,7 +66,7 @@ function SEO({description, lang, title}: Props) {
         },
         {
           property: `og:image`,
-          content: metaImage,
+          content: `${metaSiteUrl}${metaImage}`,
         },
         {
           property: `og:url`,
@@ -79,11 +74,7 @@ function SEO({description, lang, title}: Props) {
         },
         {
           name: `twitter:card`,
-          content: `Personal Website of Ankit Samota`,
-        },
-        {
-          name: `twitter:site`,
-          content: metaSiteUrl,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:title`,
@@ -95,7 +86,7 @@ function SEO({description, lang, title}: Props) {
         },
         {
           name: `twitter:image`,
-          content: metaImage,
+          content: `${metaSiteUrl}${metaImage}`,
         },
         {
           name: `twitter:description`,
