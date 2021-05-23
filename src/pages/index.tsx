@@ -7,11 +7,13 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/marginals/Footer';
+import SEO from '../components/seo';
 
 import '../styles/global.css';
 
 const Index = () => (
   <Theme>
+    <SEO title="Ankit Samota" />
     <Navbar />
     <Landing />
     <About />

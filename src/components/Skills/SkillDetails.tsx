@@ -17,17 +17,17 @@ interface Props {
 }
 
 const Div = styled(motion.div)`
-  box-shadow: 0px 4px 20px rgba(196, 196, 196, 0.25);
+  box-shadow: 0px 4px 30px -10px rgba(196, 196, 196, 0.25);
   min-height: 24rem;
-  ${tw`max-w-sm bg-background flex flex-col items-center rounded-3xl`}
+  ${tw`max-w-sm bg-background flex flex-col items-center rounded-2xl`}
 `;
 
 const Box = styled.div`
-  ${tw`h-20 w-20 sm:h-24 sm:w-24 p-4 relative bg-primary transform -translate-y-8 rounded-2xl -mb-4`}
+  ${tw`h-20 w-20 sm:h-24 sm:w-24 p-4 relative bg-primary transform -translate-y-8 rounded-xl -mb-4`}
 `;
 
 const SkillGrid = styled.div`
-  ${tw`flex flex-wrap justify-start px-8 gap-2 mt-8`}
+  ${tw`flex flex-wrap pl-6 pr-8 mt-8`}
 `;
 
 const Title = styled.h2`
@@ -37,7 +37,7 @@ const Title = styled.h2`
 
 const Pill = styled.span`
   font-family: 'Space Grotesk';
-  ${tw`px-3 py-1 text-primary bg-primary rounded-full`}
+  ${tw`px-3 py-1 ml-2 mt-2 text-primary bg-primary rounded-full`}
 `;
 
 const WebIcon = styled(Web)`
@@ -48,13 +48,15 @@ const CodingIcon = styled(Coding)`
   ${tw`h-full w-full`}
 `;
 
+// i^2 + (2k - 1) * i - 2g = 0
+
 const NeuralIcon = styled(Neural)`
   ${tw`h-full w-full`}
 `;
 
 const divVariants = {
   initial: {
-    y: 200,
+    y: 50,
     opacity: 0,
   },
   final: {
@@ -62,6 +64,7 @@ const divVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
+      ease: 'easeInOut',
     },
   },
 };

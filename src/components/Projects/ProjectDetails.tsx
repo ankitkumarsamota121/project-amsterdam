@@ -18,13 +18,13 @@ interface Props {
 }
 
 const Div = styled(motion.div)`
-  box-shadow: 0px 4px 20px rgba(196, 196, 196, 0.25);
+  box-shadow: 0px 4px 30px -10px rgba(196, 196, 196, 0.25);
   min-height: 24rem;
-  ${tw`max-w-md bg-background flex flex-col items-start rounded-3xl`}
+  ${tw`max-w-md bg-background flex flex-col items-start rounded-2xl`}
 `;
 
 const Image = styled.div`
-  ${tw`bg-primary p-6 rounded-t-3xl`}
+  ${tw`bg-primary p-6 rounded-t-2xl`}
 `;
 
 const MotionImg = styled(motion.a)`
@@ -51,7 +51,7 @@ const Text = styled.div`
 `;
 
 const LinkDiv = styled.div`
-  ${tw`flex gap-4`}
+  ${tw`flex space-x-4`}
 `;
 
 const Link = styled(motion.a)`
@@ -68,7 +68,7 @@ const LinkIcon = styled(LinkIco)`
 
 const divVariants = {
   initial: {
-    y: 200,
+    y: 50,
     opacity: 0,
   },
   final: {
@@ -76,6 +76,7 @@ const divVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
+      ease: 'easeInOut',
     },
   },
 };
