@@ -18,7 +18,7 @@ module.exports = {
       'developer portfolio',
     ],
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    // twitterUsername: '',
+    twitterUsername: '@AnkitSamota3',
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -26,7 +26,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
