@@ -33,6 +33,8 @@ function SEO({title}: Props) {
     <Helmet title={title} titleTemplate={`%s | ${site.siteMetadata.title}`}>
       <html lang="en" />
 
+      <link rel="canonical" href="https://example.com" />
+
       <meta name="description" content={metaDescription} />
       <meta name="image" content={metaImage} />
 
