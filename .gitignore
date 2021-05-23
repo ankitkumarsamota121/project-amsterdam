@@ -70,7 +70,7 @@ yarn-error.log
 
 # Lockfiles
 package-lock.json
-yarn.lock 
+# yarn.lock 
 
 # Firebase
 .firebase
