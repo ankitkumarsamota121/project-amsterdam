@@ -34,7 +34,7 @@ interface QueryData {
  * * Projects Section Styling
  */
 const Div = styled.section`
-  ${tw`min-h-screen w-screen bg-background py-20`}
+  ${tw`w-screen bg-background py-20`}
 `;
 
 const Grid = styled(motion.div)`

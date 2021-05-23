@@ -14,7 +14,7 @@ import MotionDiv from '../layout/MotionDiv';
  * * About Section Styling
  */
 const Div = styled.section`
-  ${tw`min-h-screen w-screen bg-background`}
+  ${tw`w-screen bg-background`}
 `;
 
 const Grid = styled.div`
