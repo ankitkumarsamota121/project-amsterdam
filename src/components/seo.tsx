@@ -3,12 +3,10 @@ import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 
 interface Props {
-  description?: string;
-  lang?: string;
   title: string;
 }
 
-function SEO({description, lang, title}: Props) {
+function SEO({title}: Props) {
   const {site} = useStaticQuery(
     graphql`
       query {
@@ -26,80 +24,33 @@ function SEO({description, lang, title}: Props) {
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const metaImage = site.siteMetadata.image;
+  const metaDescription = site.siteMetadata.description;
   const metaSiteUrl = site.siteMetadata.siteUrl;
+  const metaImage = `${metaSiteUrl}${site.siteMetadata.image}`;
   const metaTwitterUsername = site.siteMetadata.twitterUsername;
-  // const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: 'keywords',
-          content: site.siteMetadata.keywords.join(','),
-        },
-        {
-          name: 'image',
-          content: metaImage,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: `${metaSiteUrl}${metaImage}`,
-        },
-        {
-          property: `og:url`,
-          content: metaSiteUrl,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:creator`,
-          content: metaTwitterUsername,
-        },
-        {
-          name: `twitter:image`,
-          content: `${metaSiteUrl}${metaImage}`,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ]}
-    />
+    <Helmet title={title} titleTemplate={`%s | ${site.siteMetadata.title}`}>
+      <html lang="en" />
+
+      <meta name="description" content={metaDescription} />
+      <meta name="image" content={metaImage} />
+
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={metaImage} />
+      <meta property="og:url" content={metaSiteUrl} />
+      <meta property="og:type" content="website" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={metaTwitterUsername} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content={metaImage} />
+    </Helmet>
   );
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  description: ``,
-};
+SEO.defaultProps = {};
 
 export default SEO;

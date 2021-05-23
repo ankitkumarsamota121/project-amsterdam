@@ -12,16 +12,18 @@ import SEO from '../components/seo';
 import '../styles/global.css';
 
 const Index = () => (
-  <Theme>
+  <>
     <SEO title="Ankit Samota" />
-    <Navbar />
-    <Landing />
-    <About />
-    <Skills />
-    <Projects />
-    <Contact />
-    <Footer />
-  </Theme>
+    <Theme>
+      <Navbar />
+      <Landing />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+    </Theme>
+  </>
 );
 
 export default Index;

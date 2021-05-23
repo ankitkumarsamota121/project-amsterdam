@@ -21,15 +21,45 @@ module.exports = {
     twitterUsername: '@AnkitSamota3',
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-typescript',
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Ankit Samota`,
+        short_name: `Ankit`,
+        start_url: `/`,
+        background_color: `#6A4FFE`,
+        theme_color: `#EFEDFF`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`,
+        icons: [
+          {
+            src: `/static/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+            purpose: `any`,
+          },
+          {
+            src: `/static/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: `maskable`,
+          },
+        ],
+        icon_options: {
+          purpose: `maskable`,
+        },
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -59,21 +89,5 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Ankit Samota`,
-        short_name: `Ankit`,
-        start_url: `/`,
-        background_color: `#6A4FFE`,
-        theme_color: `#EFEDFF`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`,
-        icon_options: {
-          purpose: `maskable`,
-        },
-      },
-    },
-    `gatsby-plugin-offline`,
   ],
 };
