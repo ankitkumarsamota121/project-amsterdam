@@ -26,7 +26,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`,
+
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
@@ -72,5 +72,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };
