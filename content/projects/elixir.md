@@ -6,5 +6,5 @@ description:
 slug: elixir
 github: 'https://github.com/ankitkumarsamota121'
 link: 'https://asamota.com/'
-thumb: '../images/project.jpg'
+thumb: '../../src/images/project.jpg'
 ---

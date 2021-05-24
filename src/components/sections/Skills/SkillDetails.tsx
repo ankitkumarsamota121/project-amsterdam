@@ -4,11 +4,11 @@ import tw from 'twin.macro';
 import {motion} from 'framer-motion';
 
 // @ts-expect-error : Just a friendly SVG
-import Neural from '../../images/neural.svg';
+import Neural from '../../../images/neural.svg';
 // @ts-expect-error : Just a friendly SVG
-import Coding from '../../images/coding.svg';
+import Coding from '../../../images/coding.svg';
 // @ts-expect-error : Just a friendly SVG
-import Web from '../../images/web.svg';
+import Web from '../../../images/web.svg';
 
 interface Props {
   title: string;
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const Div = styled(motion.div)`
-  box-shadow: 0px 4px 30px -10px rgba(196, 196, 196, 0.25);
+  box-shadow: 0px 0px 30px -5px rgba(196, 196, 196, 0.25);
   min-height: 24rem;
   ${tw`max-w-sm bg-background flex flex-col items-center rounded-2xl`}
 `;

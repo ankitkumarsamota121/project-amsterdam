@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import Container from '../layout/Container';
-import Heading from '../layout/Heading';
-import Button from '../layout/Button';
-import MotionDiv from '../layout/MotionDiv';
+import Container from '../../layout/Container';
+import Heading from '../../layout/Heading';
+import Button from '../../layout/Button';
+import MotionDiv from '../../layout/MotionDiv';
 
 // // @ts-expect-error : Just importing an SVG
 // import Linkedin from '../../images/linkedin.svg';
