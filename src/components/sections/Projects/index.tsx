@@ -12,6 +12,29 @@ import InnerDiv from '../../layout/InnerDiv';
 import MotionDiv from '../../layout/MotionDiv';
 import ProjectDetails from './ProjectDetails';
 
+/**
+ * * Projects Section Styling
+ */
+const Grid = styled(motion.div)`
+  ${tw`grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 mt-20 md:mt-32`}
+`;
+
+/**
+ * * Motion Variants
+ */
+const gridVariants = {
+  final: {
+    transition: {
+      delay: 0.25,
+      staggerChildren: 0.3,
+      type: 'tween',
+    },
+  },
+};
+
+/**
+ * * Projects Section Component
+ */
 interface QueryData {
   allMarkdownRemark: {
     nodes: {
@@ -30,29 +53,6 @@ interface QueryData {
   };
 }
 
-/**
- * * Projects Section Styling
- */
-const Div = styled.section`
-  ${tw`w-screen bg-background py-20`}
-`;
-
-const Grid = styled(motion.div)`
-  ${tw`grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 mt-20 md:mt-32`}
-`;
-
-const gridVariants = {
-  final: {
-    transition: {
-      delay: 0.25,
-      staggerChildren: 0.3,
-      type: 'tween',
-    },
-  },
-};
-/**
- * * Projects Section Component
- */
 const Projects = () => {
   const controls = useAnimation();
   const {ref, inView} = useInView();
@@ -84,7 +84,7 @@ const Projects = () => {
   `);
   const {nodes} = data.allMarkdownRemark;
   return (
-    <Div id="projects-section">
+    <div id="projects-section" tw="w-screen bg-background py-20">
       <Container>
         <InnerDiv>
           <MotionDiv>
@@ -114,7 +114,7 @@ const Projects = () => {
           </MotionDiv>
         </InnerDiv>
       </Container>
-    </Div>
+    </div>
   );
 };
 

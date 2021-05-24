@@ -11,30 +11,16 @@ import InnerDiv from '../../layout/InnerDiv';
 import MotionDiv from '../../layout/MotionDiv';
 import SkillDetails from './SkillDetails';
 
-interface QueryData {
-  allMarkdownRemark: {
-    nodes: {
-      frontmatter: {
-        slug: string;
-        title: string;
-        skills: string[];
-        icon: string;
-      };
-    }[];
-  };
-}
-
 /**
  * * Skills Section Styling
  */
-const Div = styled.section`
-  ${tw`w-screen bg-background py-20`}
-`;
-
 const Grid = styled(motion.div)`
   ${tw`grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 lg:gap-12 xl:gap-12 mt-20 md:mt-32`}
 `;
 
+/**
+ * * Motion Variants
+ */
 const gridVariants = {
   final: {
     transition: {
@@ -48,6 +34,19 @@ const gridVariants = {
 /**
  * * Skills Section Component
  */
+interface QueryData {
+  allMarkdownRemark: {
+    nodes: {
+      frontmatter: {
+        slug: string;
+        title: string;
+        skills: string[];
+        icon: string;
+      };
+    }[];
+  };
+}
+
 const Skills = () => {
   const controls = useAnimation();
   const {ref, inView} = useInView();
@@ -74,7 +73,7 @@ const Skills = () => {
   `);
   const {nodes} = data.allMarkdownRemark;
   return (
-    <Div id="skills-section">
+    <div id="skills-section" tw="w-screen bg-background py-20">
       <Container>
         <InnerDiv>
           <MotionDiv>
@@ -100,7 +99,7 @@ const Skills = () => {
           </MotionDiv>
         </InnerDiv>
       </Container>
-    </Div>
+    </div>
   );
 };
 

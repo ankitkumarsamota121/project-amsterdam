@@ -1,16 +1,14 @@
 ---
 title: Programming
 skills:
-  - React
-  - Redux
-  - Lorem
-  - Ipsum
-  - Gatsby
-  - NodeJs
-  - NextJS
-  - Express
-  - MongoDB
-  - Mongoose
+  - C/C++
+  - JavaScript
+  - Typescript
+  - Python
+  - Data Structures
+  - Algorithms
+  - Git
+  - Github
 slug: programming
 icon: coding
 ---

@@ -17,20 +17,16 @@ import MotionDiv from '../../layout/MotionDiv';
 /**
  * * About Section Styling
  */
-const Div = styled.section`
-  ${tw`w-screen py-32 bg-background`}
+const StyledContentDiv = styled.div`
+  ${tw`mt-10 md:mt-10 max-w-2xl flex flex-col justify-center items-center`}
 `;
 
-const ContentDiv = styled.div`
-  ${tw`mt-10 md:mt-20 max-w-2xl flex flex-col justify-center items-center`}
-`;
-
-const Text = styled.div`
+const StyledText = styled.div`
   font-family: 'Space Grotesk';
   ${tw`text-secondary text-center text-xl md:text-2xl`};
 `;
 
-const LinksDiv = styled.div`
+const StyledLinksDiv = styled.div`
   ${tw`mt-6 md:mt-8 flex gap-6 md:gap-8`}
 `;
 
@@ -54,19 +50,23 @@ const LinksDiv = styled.div`
  */
 const Contact = () => {
   return (
-    <Div id="contact-section">
+    <div id="contact-section" tw="w-screen py-32 bg-background">
       <Container>
         <MotionDiv>
-          <Heading classes="text-center justify-self-start">Let's Talk</Heading>
-          <ContentDiv>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel purus
-              cras curabitur eget facilisis nisl. Neque a porttitor. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit.
-            </Text>
-            <LinksDiv>
-              <Button>Let's Talk</Button>
+          <Heading classes="text-center justify-self-start">
+            Get In Touch
+          </Heading>
+          <StyledContentDiv>
+            <StyledText>
+              I'm currently looking for full time job opporunities and I
+              occasionally take on freelance projects. Whether you have an
+              opportunity for me or just want to say hi, my inbox is always
+              open.
+            </StyledText>
+            <StyledLinksDiv>
+              <a href="mailto:ankitkumarsamota121@gmail.com">
+                <Button>Let's Chat!</Button>
+              </a>
               {/* <Icon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                   <LinkedinIcon />
                 </Icon>
@@ -76,11 +76,11 @@ const Contact = () => {
                 <Icon whileHover={{scale: 1.1}} whileTap={{scale: 0.9}}>
                   <InstaIcon />
                 </Icon> */}
-            </LinksDiv>
-          </ContentDiv>
+            </StyledLinksDiv>
+          </StyledContentDiv>
         </MotionDiv>
       </Container>
-    </Div>
+    </div>
   );
 };
 
