@@ -1,7 +1,6 @@
 import React from 'react';
 import {graphql, useStaticQuery} from 'gatsby';
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import tw, {styled} from 'twin.macro';
 import {GatsbyImage} from 'gatsby-plugin-image';
 
 import Container from '../../layout/Container';
