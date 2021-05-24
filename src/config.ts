@@ -20,8 +20,8 @@ const config = {
   //   userDescription:
   // "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
   copyright: 'Copyright © 2021. Ankit Samota', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#EFEDFF', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#6A4FFE', // Used for setting manifest background color.
+  themeColor: '#6E44FF', // Used for setting manifest and progress theme colors.
+  backgroundColor: '#0F0824', // Used for setting manifest background color.
 };
 
 export default config;
