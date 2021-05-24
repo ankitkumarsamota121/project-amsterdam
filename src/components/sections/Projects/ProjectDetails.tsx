@@ -5,67 +5,45 @@ import {motion} from 'framer-motion';
 import {GatsbyImage, IGatsbyImageData} from 'gatsby-plugin-image';
 
 // @ts-expect-error : Just a friendly SVG
-import Github from '../../../images/github.svg';
+import GithubIcon from '../../../images/github.svg';
 // @ts-expect-error : Just a friendly SVG
-import LinkIco from '../../../images/link.svg';
+import LinkIcon from '../../../images/link.svg';
 
-interface Props {
-  title: string;
-  description: string;
-  github: string;
-  link: string;
-  thumb: IGatsbyImageData;
-}
-
-const Div = styled(motion.div)`
+/**
+ * * Project Details Styling
+ */
+const StyledOuterDiv = styled(motion.div)`
   box-shadow: 0px 0px 30px -5px rgba(196, 196, 196, 0.25);
-  min-height: 24rem;
+  max-height: 32rem;
   ${tw`max-w-md bg-background flex flex-col items-start rounded-2xl`}
 `;
 
-const Image = styled.div`
-  ${tw`bg-primary p-6 rounded-t-2xl`}
+const StyledImageDiv = styled.div`
+  ${tw`h-1/2 bg-primary p-6 rounded-t-2xl`}
 `;
 
-const MotionImg = styled(motion.a)`
+const StyledMotionImg = styled(motion.a)`
   filter: drop-shadow(4px 4px 20px #000000);
-  ${tw`h-full w-full block transform -rotate-6 rounded-xl`}
+  ${tw`h-full max-w-full block transform -rotate-6 rounded-xl`}
 `;
 
-const Img = styled(GatsbyImage)`
-  ${tw`rounded-xl`}
-`;
-
-const ContentDiv = styled.div`
+const StyledContentDiv = styled.div`
   ${tw`p-8 flex flex-col gap-4`}
 `;
 
-const Title = styled.h2`
+const StyledTitle = styled.h2`
   font-family: 'Space Grotesk';
   ${tw`text-accent text-2xl font-semibold`}
 `;
 
-const Text = styled.div`
+const StyledText = styled.div`
   font-family: 'Space Grotesk';
   ${tw`text-secondary`}
 `;
 
-const LinkDiv = styled.div`
-  ${tw`flex space-x-4`}
-`;
-
-const Link = styled(motion.a)`
-  ${tw`block h-7 w-7`}
-`;
-
-const GithubIcon = styled(Github)`
-  ${tw`h-full w-full inline-block`}
-`;
-
-const LinkIcon = styled(LinkIco)`
-  ${tw`h-full w-full inline-block`}
-`;
-
+/**
+ * * Motion Variants
+ */
 const divVariants = {
   initial: {
     y: 50,
@@ -81,41 +59,62 @@ const divVariants = {
   },
 };
 
+/**
+ * * Project Details Component
+ */
+interface Props {
+  title: string;
+  description: string;
+  github: string;
+  link: string;
+  thumb: IGatsbyImageData;
+}
+
 const ProjectDetails = ({title, description, github, link, thumb}: Props) => {
   const [isHovered, setHovered] = useState(false);
   return (
-    <Div variants={divVariants}>
-      <Image>
-        <MotionImg
+    <StyledOuterDiv variants={divVariants}>
+      <StyledImageDiv>
+        <StyledMotionImg
           animate={{rotate: isHovered ? 6 : -6, scale: isHovered ? 1.1 : 1}}
           href={link.length > 0 ? link : github}
         >
-          <Img
+          <GatsbyImage
             image={thumb}
+            tw="rounded-xl max-w-full max-h-full"
             alt="Application Screenshot"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           />
-        </MotionImg>
-      </Image>
-      <ContentDiv>
-        <Title>{title}</Title>
-        <Text>{description}</Text>
+        </StyledMotionImg>
+      </StyledImageDiv>
 
-        <LinkDiv>
+      <StyledContentDiv>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledText>{description}</StyledText>
+
+        <div tw="flex space-x-4">
           {github.length > 0 && (
-            <Link href={github} whileHover={{scale: 1.1}}>
-              <GithubIcon />
-            </Link>
+            <motion.a
+              href={github}
+              whileHover={{scale: 1.1}}
+              tw="block h-7 w-7"
+            >
+              <GithubIcon tw="h-full w-full inline-block" />
+            </motion.a>
           )}
           {link.length > 0 && (
-            <Link href={github} whileHover={{scale: 1.1}}>
-              <LinkIcon />
-            </Link>
+            <motion.a
+              href={github}
+              whileHover={{scale: 1.1}}
+              tw="block h-7 w-7"
+            >
+              <LinkIcon tw="h-full w-full inline-block" />
+            </motion.a>
           )}
-        </LinkDiv>
-      </ContentDiv>
-    </Div>
+        </div>
+      </StyledContentDiv>
+    </StyledOuterDiv>
   );
 };
 

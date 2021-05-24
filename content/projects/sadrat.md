@@ -1,11 +1,11 @@
 ---
 title: Sadrat
 description:
-  'Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur
-  adipiscing elit. Vel purus cras curabitur eget facilisis nisl. Neque a
-  porttitor. Lorem ipsum dolor sit amet.'
+  'Developed a ML powered web app to to detect Adverse Drug Reaction Signals
+  (ADRS) using data from social media platforms like Twitter using the concept
+  of Data Programming.'
 slug: sadrat
-github: 'https://github.com/ankitkumarsamota121'
-link: 'https://asamota.com/'
-thumb: '../../src/images/project.jpg'
+github: 'https://github.com/purplepotion/sadrat'
+link: ''
+thumb: '../../src/images/sadrat.png'
 ---

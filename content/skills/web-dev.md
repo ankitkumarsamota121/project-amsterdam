@@ -1,16 +1,19 @@
 ---
 title: Web Development
 skills:
-  - React
+  - HTML
+  - CSS
+  - Sass
+  - ReactJS
   - Redux
-  - Lorem
-  - Ipsum
-  - Gatsby
-  - NodeJs
   - NextJS
+  - GraphQL
+  - Gatsby
+  - NodeJS
   - Express
   - MongoDB
   - Mongoose
+  - Firebase
 slug: web-dev
 icon: web
 ---

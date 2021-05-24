@@ -1,11 +1,11 @@
 ---
 title: HackNITR Website
 description:
-  'Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur
-  adipiscing elit. Vel purus cras curabitur eget facilisis nisl. Neque a
-  porttitor. Lorem ipsum dolor sit amet.'
+  'Supervised the development of official website for
+the 2nd edition of HackNITR - Flagship hackathon of
+NIT Rourkela. Also, Worked on the frontend development of the Application.'
 slug: hacknitr
-github: 'https://github.com/ankitkumarsamota121'
-link: 'https://asamota.com/'
-thumb: '../../src/images/project.jpg'
+github: 'https://github.com/dscnitrourkela/project-kiwi'
+link: 'https://hacknitr.tech'
+thumb: '../../src/images/hacknitr.png'
 ---

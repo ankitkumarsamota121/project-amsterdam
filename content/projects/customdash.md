@@ -5,7 +5,7 @@ description:
   Telecommunication Companies better understand their customers and improve
   customer satisfaction levels.'
 slug: customdash
-github: 'https://github.com/ankitkumarsamota121'
-link: 'https://asamota.com/'
-thumb: '../../src/images/project.jpg'
+github: 'https://github.com/ankitkumarsamota121/CustomDash'
+link: ''
+thumb: '../../src/images/customdash.png'
 ---

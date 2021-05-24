@@ -6,6 +6,9 @@ skills:
   - Scikit-learn
   - Numpy
   - Pandas
+  - Matplotlib
+  - Plotly
+  - Dash
 slug: machine-learning
 icon: neural
 ---
