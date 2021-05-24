@@ -1,84 +1,74 @@
-const path = require('path');
-
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
-    title: 'Personal Website',
+    title: 'Ankit Samota',
     description:
-      'Ankit Samota is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://asamota.com', // No trailing slash allowed!
-    keywords: [
-      'web developer portfolio',
-      'best developer portfolio',
-      'ankit samota',
-      'samota',
-      'ankit',
-      'nit rourkela',
-      'student developer portfolio',
-      'personal website',
-      'developer portfolio',
-    ],
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+      'Ankit Samota is a student developer - currently studying at NIT Rourkela - who specializes in building (and occasionally designing) modern and performant web applications.',
+    image: '/og.png',
     twitterUsername: '@AnkitSamota3',
+    siteUrl: 'https://asamota.com',
+    author: `@incognitus`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    'gatsby-plugin-typescript',
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Ankit Samota`,
-        short_name: `Ankit`,
-        start_url: `/`,
-        background_color: `#6A4FFE`,
-        theme_color: `#EFEDFF`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`,
-        icons: [
-          {
-            src: `/static/android-chrome-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-            purpose: `any`,
-          },
-          {
-            src: `/static/android-chrome-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-            purpose: `maskable`,
-          },
-        ],
-        icon_options: {
-          purpose: `maskable`,
-        },
-      },
-    },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        path: `${__dirname}/src/images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `skills`,
-        path: `${__dirname}/src/skills/`,
+        path: `${__dirname}/content/skills`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
-        path: `${__dirname}/src/projects/`,
+        path: `${__dirname}/content/projects`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `space grotesk\:300,400,500,600,700`,
+          `poppins\:300,400,500,600,700,800,900`, // you can also specify font weights and styles
+        ],
+        display: 'swap',
+      },
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          // Cache fonts forever
+          '/fonts/*': [
+            'Cache-Control: public',
+            'Cache-Control: max-age=31536000',
+            'Cache-Control: immutable',
+          ],
+          // Cache images for a week
+          '/static/*': [
+            'Cache-Control: public',
+            'Cache-Control: max-age=31536000',
+            'Cache-Control: immutable',
+          ],
+        },
       },
     },
     {
@@ -89,5 +79,21 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Ankit Samota : Portfolio',
+        short_name: 'Ankit Samota',
+        start_url: `/`,
+        background_color: '#EFEDFF',
+        theme_color: '#6A4FFE',
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-gatsby-cloud`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-offline`,
   ],
 };

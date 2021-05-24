@@ -4,10 +4,10 @@ import tw from 'twin.macro';
 import {motion} from 'framer-motion';
 
 // @ts-expect-error : Just importing an SVG
-import Img from '../../images/sketch.svg';
-import Container from '../layout/Container';
-import Heading from '../layout/Heading';
-import Button from '../layout/Button';
+import Img from '../../../images/sketch.svg';
+import Container from '../../layout/Container';
+import Heading from '../../layout/Heading';
+import Button from '../../layout/Button';
 
 /**
  * * Landing Styling

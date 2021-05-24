@@ -5,9 +5,9 @@ import {motion} from 'framer-motion';
 import {GatsbyImage, IGatsbyImageData} from 'gatsby-plugin-image';
 
 // @ts-expect-error : Just a friendly SVG
-import Github from '../../images/github.svg';
+import Github from '../../../images/github.svg';
 // @ts-expect-error : Just a friendly SVG
-import LinkIco from '../../images/link.svg';
+import LinkIco from '../../../images/link.svg';
 
 interface Props {
   title: string;
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const Div = styled(motion.div)`
-  box-shadow: 0px 4px 30px -10px rgba(196, 196, 196, 0.25);
+  box-shadow: 0px 0px 30px -5px rgba(196, 196, 196, 0.25);
   min-height: 24rem;
   ${tw`max-w-md bg-background flex flex-col items-start rounded-2xl`}
 `;

@@ -6,11 +6,11 @@ import {motion, useAnimation} from 'framer-motion';
 import {useInView} from 'react-intersection-observer';
 import {IGatsbyImageData} from 'gatsby-plugin-image';
 
-import Container from '../layout/Container';
-import Heading from '../layout/Heading';
-import InnerDiv from '../layout/InnerDiv';
+import Container from '../../layout/Container';
+import Heading from '../../layout/Heading';
+import InnerDiv from '../../layout/InnerDiv';
+import MotionDiv from '../../layout/MotionDiv';
 import ProjectDetails from './ProjectDetails';
-import MotionDiv from '../layout/MotionDiv';
 
 interface QueryData {
   allMarkdownRemark: {

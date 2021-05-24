@@ -2,11 +2,7 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 
-interface Props {
-  title: string;
-}
-
-function SEO({title}: Props) {
+const SEO = () => {
   const {site} = useStaticQuery(
     graphql`
       query {
@@ -14,44 +10,57 @@ function SEO({title}: Props) {
           siteMetadata {
             title
             description
-            keywords
-            siteUrl
             image
             twitterUsername
+            siteUrl
           }
         }
       }
     `,
   );
 
-  const metaDescription = site.siteMetadata.description;
-  const metaSiteUrl = site.siteMetadata.siteUrl;
-  const metaImage = `${metaSiteUrl}${site.siteMetadata.image}`;
-  const metaTwitterUsername = site.siteMetadata.twitterUsername;
+  const siteUrl = site.siteMetadata.siteUrl;
+  const twitterUsername = site.siteMetadata.twitterUsername;
+
+  const seo = {
+    title: site.siteMetadata.title,
+    description: site.siteMetadata.description,
+    image: `${siteUrl}${site.siteMetadata.image}`,
+    url: site.siteMetadata.siteUrl,
+  };
 
   return (
-    <Helmet title={title} titleTemplate={`%s | ${site.siteMetadata.title}`}>
+    <Helmet title={seo.title} defaultTitle={seo.title}>
+      <meta charSet="utf-8" />
       <html lang="en" />
+      <link rel="canonical" href={siteUrl} />
 
-      <link rel="canonical" href="https://example.com" />
+      {/* ================ Primary Meta Tags ================  */}
+      <meta name="title" content={seo.title} />
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
 
-      <meta name="description" content={metaDescription} />
-      <meta name="image" content={metaImage} />
-
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:image" content={metaImage} />
-      <meta property="og:url" content={metaSiteUrl} />
+      {/* ================ Open Graph / Facebook ================  */}
       <meta property="og:type" content="website" />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:site_name" content={seo.title} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" itemProp="image" content={seo.image} />
+      <meta property="og:image:url" content={seo.image} />
+      <meta property="og:image:secure_url" content={seo.image} />
+      <meta property="og:image:type" content="image/png" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={metaTwitterUsername} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={metaImage} />
+      {/* ================ Twitter ================  */}
+      <meta name="twitter:card" content="summary" />
+      <meta property="twitter:url" content={seo.url} />
+      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
     </Helmet>
   );
-}
+};
 
 SEO.defaultProps = {};
 
